@@ -1,0 +1,12 @@
+<div class="meals p-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-20 bg-[#F4F2EE]">
+
+    @for (item of getAllMeals; track $index) {
+        <div class="meal text-center hover:shadow-xl group  hover:scale-105 duration-300 transition-all bg-white p-12 pb-4  rounded-[35px] mt-8">
+            <img [src]=item.strMealThumb class="w-full group-hover:rotate-[360deg] duration-700 transition-all rounded-full drop-shadow-xl  -translate-y-20  shadow-2xl" alt="">
+            <h3 class="font-semibold -mt-12 font-Pacifico tracking-wider text-xl">
+                {{ item.strMeal.split(' ').slice(0, 2).join(' ') }}</h3>
+            <button class="text-white bg-gradient-to-r mt-4 bg-secondary bg-emerald-600  hover:bg-emerald-500 font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300  px-8 py-2 rounded-full"> <a href=""> View Recipe</a>  </button>                
+        </div>
+    }
+    
+</div>

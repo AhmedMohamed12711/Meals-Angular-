@@ -1,0 +1,22 @@
+<div class="p-4 overflow-hidden  bg-[#F4F2EE]" >
+    <div class="container py-4 px-4">
+        <h1 class="text-4xl font-bold text-orange-400">Learn, Cook, Eat Your Food</h1>
+    </div>
+    <ul class="sm:flex mt-8 hidden flex-wrap gap-4 font-medium text-center text-gray-500 border-b border-gray-200">
+        <li class="me-2">
+            <a aria-current="page" class="inline-block catLink px-4 py-2  border transition-all hover:shadow-xl shadow duration-300 rounded-full hover:text-gray-600 hover:bg-gray-50
+            " href="#/"
+            routerLink="/All" routerLinkActive="active" 
+            >All</a>
+        </li>
+        @for (item of strCategory; track $index) {
+            <li class="me-2">
+                <a aria-current="page" class="inline-block catLink px-4 py-2  border transition-all hover:shadow-xl shadow duration-300 rounded-full hover:text-gray-600 hover:bg-gray-50                 
+                " href="#/" 
+                [routerLink]="'/' + item.strCategory" routerLinkActive="active"
+                >{{item.strCategory}}</a>
+            </li>
+        }
+    </ul>
+</div>
+

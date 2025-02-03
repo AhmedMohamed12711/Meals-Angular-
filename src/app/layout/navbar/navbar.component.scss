@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Pacifico&display=swap');
+.container {
+    h1{
+        font-family: "Pacifico", serif;   
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+ul li{
+    a{
+        font-family:cursive;
+        font-weight: 500;
+        line-height: 24px;
+    }
+}
+
+.active{
+    color: white;
+    background-color: black;
+}
