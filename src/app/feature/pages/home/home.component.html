@@ -1,6 +1,6 @@
 <div class="grid grid-cols-5 min-h-screen">
     <!-- Sidebar -->
-    <aside class="fixed top-0 left-0 z-50 w-[20%] h-screen transition-transform -translate-x-full sm:translate-x-0">
+    <aside class="sidebar fixed top-0 left-0 z-50 w-[20%] h-screen transition-transform -translate-x-full sm:translate-x-0 ">
         <div class="h-full px-3 py-4 bg-gray-50 col-span-1">
             <div>
                 <img src="/imgs/logo.png" alt="logo" class="w-full">
@@ -29,7 +29,25 @@
     </aside>
 
     <!-- Main Content and Navbar -->
-    <div class="col-start-2 col-span-4">
+    <div class="col-start-1 sm:col-start-2 col-span-5 content  z-50 sm:z-auto bg-[#F4F2EE]">
+        
+        <form class="max-w-sm mx-auto w-full">
+            <label for="categories" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Select an option
+            </label>
+            
+            <select id="categories" 
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 sm:hidden"
+                (change)="onCategoryChange($event)">
+                
+                <option value="All">All</option>
+                <option *ngFor="let item of strCategory" [value]="item.strCategory">
+                    {{ item.strCategory }}
+                </option>
+            </select>
+            
+        </form>
+        
         <app-navbar></app-navbar>
         <router-outlet></router-outlet>
     </div>
